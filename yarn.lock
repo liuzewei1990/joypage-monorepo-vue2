@@ -9646,10 +9646,10 @@ joi@^17.4.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
-joypage-create-component@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/joypage-create-component/-/joypage-create-component-1.0.13.tgz#c9244774c12e25be6fc050b5bd5e8f250f797b25"
-  integrity sha512-NwwK2RFth+2j+U/BrZyPnGoeWe85kvv4fZ0zcVBnWv4fNgEtv0Hd/CYuOwSTLui8FyVB6K75V21UIUwz0cgmiQ==
+joypage-create-component@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.npmmirror.com/joypage-create-component/-/joypage-create-component-1.0.15.tgz#b44b5a7fe97622d01636fd9d151f540966211f09"
+  integrity sha512-YbiY8Y9rilLIkrwHKCvmIDxtMAyNcFRFieg80QzN3TF+ElZ8W8vhIfZd+nQgySTeMjBfwNUkrWWd4fUbK3pM9g==
   dependencies:
     fast-glob "^3.2.7"
     fs-extra "^9.1.0"

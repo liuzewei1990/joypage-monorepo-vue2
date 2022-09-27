@@ -2,8 +2,7 @@
     <!-- 表示视图组件,用来解析element -->
     <section class="work-component">
         <grid-item :static="false" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
-            <!-- {{ workComponentItem.i }} -->
-            <!-- <component :is="coName" v-bind="coProps"> </component> -->
+            <component :is="coName" v-bind="coProps"> </component>
         </grid-item>
     </section>
 </template>
@@ -39,12 +38,10 @@
         // position: absolute;
     }
 
-    .vue-grid-layout {
-        background: #eee;
-    }
     .vue-grid-item:not(.vue-grid-placeholder) {
         background: #f2f2f2;
         // border: 1px solid black;
+        touch-action: none;
     }
     .vue-grid-item .resizing {
         opacity: 0.9;
