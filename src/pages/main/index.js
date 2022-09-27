@@ -5,9 +5,12 @@ import store from "./store";
 
 import work from "work";
 // import vpdsmart from "vpdsmart";
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
 
 Vue.use(work);
 // Vue.use(vpdsmart);
+Vue.use(Antd);
 
 Vue.config.productionTip = false;
 
