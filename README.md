@@ -1,4 +1,5 @@
-## 技术架构  微项目 + monorepo架构的结合
+## 技术架构 微项目 + monorepo 架构的结合
+
 ```
 lerna       负责monorepo架构管理
 yarn        负责依赖管理
@@ -16,14 +17,14 @@ Ant Design Vue
 
 ```
 
-## node和npm版本
+## node 和 npm 版本
 
 ```
 "node": "~14.17.1",
 "npm": "~6.14.13"
 ```
 
-## vscode开发工具插件
+## vscode 开发工具插件
 
 ```
 Tslint
@@ -51,14 +52,12 @@ npm run dev -xxx包名
 注：启动后访问地址为：http://localhost:8080/{包名}
 ```
 
-
 ## 打包到测试环境 环境变量：productionTest
 
 ```
 npm run build:test 包名
 /productionTest 输出目录
 ```
-
 
 ## 打包到生产环境 环境变量：production
 
