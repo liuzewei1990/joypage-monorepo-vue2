@@ -1,7 +1,7 @@
 <template>
     <!-- 表示视图组件,用来解析element -->
     <section class="work-component">
-        <grid-item :static="false" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
+        <grid-item :static="true" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
             <component :is="coName" v-bind="coProps"> </component>
         </grid-item>
     </section>
@@ -39,7 +39,7 @@
     }
 
     .vue-grid-item:not(.vue-grid-placeholder) {
-        background: #f2f2f2;
+        // background: #f2f2f2;
         // border: 1px solid black;
         touch-action: none;
     }
