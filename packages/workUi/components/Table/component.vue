@@ -21,7 +21,8 @@
         },
         {
             title: "Address",
-            dataIndex: "address"
+            dataIndex: "address",
+            ellipsis: true
         }
     ];
 

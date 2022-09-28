@@ -1,13 +1,27 @@
 <template>
-    <pro-layout :menus="[]" :sider-width="180" :collapsed="collapsed" :isMobile="isMobile" :handleMediaQuery="handleMediaQuery" :handleCollapse="handleCollapse" v-bind="settings">
+    <pro-layout
+        :logo="logo"
+        title="WorkUi"
+        :loading="true"
+        layout="top"
+        navTheme="dark"
+        :menus="[]"
+        :sider-width="180"
+        :collapsed="collapsed"
+        :isMobile="isMobile"
+        :handleMediaQuery="handleMediaQuery"
+        :handleCollapse="handleCollapse"
+        v-bind="settings">
         <router-view />
     </pro-layout>
 </template>
 
 <script>
+    const logo = require("../assets/logo.png");
     export default {
         data() {
             return {
+                logo: logo,
                 collapsed: false,
                 // 是否手机模式
                 isMobile: false,
@@ -36,4 +50,8 @@
     };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less">
+    .ant-pro-basicLayout-content {
+        margin: 5px !important;
+    }
+</style>

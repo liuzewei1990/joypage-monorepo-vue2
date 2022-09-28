@@ -1,14 +1,14 @@
 <template>
     <grid-layout
         @layout-ready="layoutReadyEvent"
-        :col-num="24"
-        :row-height="30"
+        :col-num="30"
+        :row-height="2"
         :is-draggable="true"
         :auto-size="true"
         :margin="[5, 5]"
         :useStyleCursor="false"
         :is-resizable="true"
-        :vertical-compact="true"
+        :vertical-compact="false"
         :use-css-transforms="true"
         v-bind="$attrs"
         v-on="$listeners">

@@ -1,7 +1,7 @@
 <template>
     <!-- 表示页面中的一个视图 -->
     <section class="work-view">
-        <!-- {{ workComponents }} -->
+        {{ workComponents }}
         <work-layout :layout.sync="workComponents">
             <work-component v-for="item in workComponents" :key="item.elId" :workComponentItem="item"></work-component>
         </work-layout>

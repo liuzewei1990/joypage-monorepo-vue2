@@ -1,4 +1,3 @@
-import work from "./json2";
 export default {
     workId: "10001",
     workMode: "",
@@ -12,13 +11,13 @@ export default {
             viewId: "20001",
             title: "",
             elements: [
-                { elId: "30001", x: 0, y: 47, w: 8, h: 51, i: "30001", elStyle: {}, coType: "vue", coName: "Table", coProps: {}, coEvent: [], coMethods: [], moved: false },
+                { elId: "30001", x: 0, y: 48, w: 8, h: 51, i: "30001", elStyle: {}, coType: "vue", coName: "Table", coProps: {}, coEvent: [], coMethods: [], moved: false },
                 {
                     elId: "30002",
-                    x: 13,
+                    x: 8,
                     y: 80,
-                    w: 17,
-                    h: 69,
+                    w: 9,
+                    h: 70,
                     i: "30002",
                     elStyle: {},
                     coType: "vue",
@@ -28,7 +27,7 @@ export default {
                     coMethods: [],
                     moved: false
                 },
-                { elId: "30003", x: 0, y: 98, w: 8, h: 51, i: "30003", elStyle: {}, coType: "vue", coName: "Table", coProps: {}, coEvent: [], coMethods: [], moved: false },
+                { elId: "30003", x: 17, y: 80, w: 13, h: 70, i: "30003", elStyle: {}, coType: "vue", coName: "Table", coProps: {}, coEvent: [], coMethods: [], moved: false },
                 {
                     elId: "30004",
                     x: 8,
@@ -45,24 +44,7 @@ export default {
                     moved: false
                 },
                 { elId: "30006", x: 0, y: 0, w: 8, h: 47, i: "30006", elStyle: {}, coType: "vue", coName: "Calendar", coProps: { fullscreen: false }, coEvent: [], coMethods: [], moved: false },
-                { elId: "30007", x: 8, y: 80, w: 5, h: 69, i: "30007", elStyle: {}, coType: "vue", coName: "Card", coProps: { fullscreen: false }, coEvent: [], coMethods: [], moved: false },
-                {
-                    elId: "30008",
-                    x: 0,
-                    y: 160,
-                    w: 30,
-                    h: 166,
-                    i: "30008",
-                    elStyle: {},
-                    coType: "vue",
-                    coName: "work",
-                    coProps: {
-                        work: work
-                    },
-                    coEvent: [],
-                    coMethods: [],
-                    moved: false
-                }
+                { elId: "30007", x: 0, y: 99, w: 4, h: 53, i: "30007", elStyle: {}, coType: "vue", coName: "Card", coProps: { fullscreen: false }, coEvent: [], coMethods: [], moved: false }
             ]
         }
     ]
