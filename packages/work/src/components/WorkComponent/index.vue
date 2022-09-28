@@ -9,7 +9,7 @@
 
 <script>
     import Vue from "vue";
-    import { GridItem } from "../../grid-layout/index.js";
+    import { GridItem } from "vue-grid-layout";
     import { Empty } from "ant-design-vue";
     export default {
         components: { GridItem, Empty },

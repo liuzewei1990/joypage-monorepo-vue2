@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import { GridLayout } from "../../grid-layout/index.js";
+    import { GridLayout } from "vue-grid-layout";
     export default {
         components: { GridLayout },
         data() {
