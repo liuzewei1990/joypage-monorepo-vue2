@@ -1,7 +1,6 @@
 <template>
     <div>
-        1
-        <!-- <work :work="json"></work> -->
+        <work :work="json"></work>
     </div>
 </template>
 
