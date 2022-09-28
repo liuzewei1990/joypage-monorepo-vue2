@@ -8,9 +8,11 @@
 </template>
 
 <script>
+    import Vue from "vue";
     import { GridItem } from "vue-grid-layout";
+    import { Empty } from "ant-design-vue";
     export default {
-        components: { GridItem },
+        components: { GridItem, Empty },
         props: {
             workComponentItem: {
                 type: Object,
@@ -24,7 +26,8 @@
                 return this.workComponentItem.elStyle;
             },
             coName() {
-                return this.workComponentItem.coName;
+                let isComponent = Vue.component(this.workComponentItem.coName);
+                return isComponent ? this.workComponentItem.coName : "Empty";
             },
             coProps() {
                 return this.workComponentItem.coProps;
@@ -40,7 +43,8 @@
 
     .vue-grid-item:not(.vue-grid-placeholder) {
         // background: #f2f2f2;
-        // border: 1px solid black;
+        border: 1px solid rgb(221, 221, 221);
+        border-radius: 5px;
         touch-action: none;
     }
     .vue-grid-item .resizing {

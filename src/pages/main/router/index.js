@@ -1,27 +1,22 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Router from "vue-router";
+import { baseRouterMap, asyncRouterMap } from "./router.config.js";
 
-Vue.use(VueRouter);
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location, onResolve, onReject) {
+    if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject);
+    return originalPush.call(this, location).catch((err) => err);
+};
 
-const routes = [
-    {
-        path: "/",
-        name: "home",
-        component: HomeView
-    },
-    {
-        path: "/about",
-        name: "about",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue")
-    }
-];
+Vue.use(Router);
 
-const router = new VueRouter({
-    routes
-});
+const createRouter = () => new Router({ routes: [].concat(baseRouterMap).concat(asyncRouterMap) });
+
+const router = createRouter();
+
+export function resetRouter() {
+    const newRouter = createRouter();
+    router.matcher = newRouter.matcher;
+}
 
 export default router;
