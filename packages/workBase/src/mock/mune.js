@@ -5,11 +5,11 @@ export default [
         parentId: 0,
         id: 1,
         meta: {
-            title: "menu.dashboard",
+            title: "mnknm吃多少吃多少",
             icon: "dashboard",
             show: true
         },
-        component: "RouteView",
+        keyd: "RouteView",
         redirect: "/dashboard/workplace"
     },
     {
@@ -20,7 +20,7 @@ export default [
             title: "menu.dashboard.monitor",
             show: true
         },
-        component: "Workplace"
+        keyd: "Workplace"
     },
     {
         name: "monitor",
@@ -41,7 +41,7 @@ export default [
             title: "menu.dashboard.analysis",
             show: true
         },
-        component: "Analysis",
+        keyd: "Analysis",
         path: "/dashboard/analysis"
     },
 
@@ -55,7 +55,7 @@ export default [
             title: "menu.form"
         },
         redirect: "/form/base-form",
-        component: "RouteView"
+        keyd: "RouteView"
     },
     {
         name: "basic-form",
@@ -64,7 +64,7 @@ export default [
         meta: {
             title: "menu.form.basic-form"
         },
-        component: "BasicForm"
+        keyd: "BasicForm"
     },
     {
         name: "step-form",
@@ -73,7 +73,7 @@ export default [
         meta: {
             title: "menu.form.step-form"
         },
-        component: "StepForm"
+        keyd: "StepForm"
     },
     {
         name: "advanced-form",
@@ -82,7 +82,7 @@ export default [
         meta: {
             title: "menu.form.advanced-form"
         },
-        component: "AdvanceForm"
+        keyd: "AdvanceForm"
     },
 
     // list
@@ -96,7 +96,7 @@ export default [
             show: true
         },
         redirect: "/list/table-list",
-        component: "RouteView"
+        keyd: "RouteView"
     },
     {
         name: "table-list",
@@ -107,7 +107,7 @@ export default [
             title: "menu.list.table-list",
             show: true
         },
-        component: "TableList"
+        keyd: "TableList"
     },
     {
         name: "basic-list",
@@ -117,7 +117,7 @@ export default [
             title: "menu.list.basic-list",
             show: true
         },
-        component: "StandardList"
+        keyd: "StandardList"
     },
     {
         name: "card",
@@ -127,7 +127,7 @@ export default [
             title: "menu.list.card-list",
             show: true
         },
-        component: "CardList"
+        keyd: "CardList"
     },
     {
         name: "search",
@@ -138,7 +138,7 @@ export default [
             show: true
         },
         redirect: "/list/search/article",
-        component: "SearchLayout"
+        keyd: "SearchLayout"
     },
     {
         name: "article",
@@ -148,7 +148,7 @@ export default [
             title: "menu.list.search-list.articles",
             show: true
         },
-        component: "SearchArticles"
+        keyd: "SearchArticles"
     },
     {
         name: "project",
@@ -158,7 +158,7 @@ export default [
             title: "menu.list.search-list.projects",
             show: true
         },
-        component: "SearchProjects"
+        keyd: "SearchProjects"
     },
     {
         name: "application",
@@ -168,7 +168,7 @@ export default [
             title: "menu.list.search-list.applications",
             show: true
         },
-        component: "SearchApplications"
+        keyd: "SearchApplications"
     },
 
     // profile
@@ -182,7 +182,7 @@ export default [
             show: true
         },
         redirect: "/profile/basic",
-        component: "RouteView"
+        keyd: "RouteView"
     },
     {
         name: "basic",
@@ -192,7 +192,7 @@ export default [
             title: "menu.profile.basic",
             show: true
         },
-        component: "ProfileBasic"
+        keyd: "ProfileBasic"
     },
     {
         name: "advanced",
@@ -202,7 +202,7 @@ export default [
             title: "menu.profile.advanced",
             show: true
         },
-        component: "ProfileAdvanced"
+        keyd: "ProfileAdvanced"
     },
 
     // result
@@ -216,7 +216,7 @@ export default [
             show: true
         },
         redirect: "/result/success",
-        component: "PageView"
+        keyd: "PageView"
     },
     {
         name: "success",
@@ -227,7 +227,7 @@ export default [
             hiddenHeaderContent: true,
             show: true
         },
-        component: "ResultSuccess"
+        keyd: "ResultSuccess"
     },
     {
         name: "fail",
@@ -238,7 +238,7 @@ export default [
             hiddenHeaderContent: true,
             show: true
         },
-        component: "ResultFail"
+        keyd: "ResultFail"
     },
 
     // Exception
@@ -252,7 +252,7 @@ export default [
             show: true
         },
         redirect: "/exception/403",
-        component: "RouteView"
+        keyd: "RouteView"
     },
     {
         name: "403",
@@ -262,7 +262,7 @@ export default [
             title: "menu.exception.not-permission",
             show: true
         },
-        component: "Exception403"
+        keyd: "Exception403"
     },
     {
         name: "404",
@@ -272,7 +272,7 @@ export default [
             title: "menu.exception.not-find",
             show: true
         },
-        component: "Exception404"
+        keyd: "Exception404"
     },
     {
         name: "500",
@@ -282,7 +282,7 @@ export default [
             title: "menu.exception.server-error",
             show: true
         },
-        component: "Exception500"
+        keyd: "Exception500"
     },
 
     // account
@@ -296,7 +296,7 @@ export default [
             show: true
         },
         redirect: "/account/center",
-        component: "RouteView"
+        keyd: "RouteView"
     },
     {
         name: "center",
@@ -306,7 +306,7 @@ export default [
             title: "menu.account.center",
             show: true
         },
-        component: "AccountCenter"
+        keyd: "AccountCenter"
     },
     // 特殊三级菜单
     {
@@ -320,7 +320,7 @@ export default [
             show: true
         },
         redirect: "/account/settings/basic",
-        component: "AccountSettings"
+        keyd: "AccountSettings"
     },
     {
         name: "BasicSettings",
@@ -331,7 +331,7 @@ export default [
             title: "account.settings.menuMap.basic",
             show: false
         },
-        component: "BasicSetting"
+        keyd: "BasicSetting"
     },
     {
         name: "SecuritySettings",
@@ -342,7 +342,7 @@ export default [
             title: "account.settings.menuMap.security",
             show: false
         },
-        component: "SecuritySettings"
+        keyd: "SecuritySettings"
     },
     {
         name: "CustomSettings",
@@ -353,7 +353,7 @@ export default [
             title: "account.settings.menuMap.custom",
             show: false
         },
-        component: "CustomSettings"
+        keyd: "CustomSettings"
     },
     {
         name: "BindingSettings",
@@ -364,7 +364,7 @@ export default [
             title: "account.settings.menuMap.binding",
             show: false
         },
-        component: "BindingSettings"
+        keyd: "BindingSettings"
     },
     {
         name: "NotificationSettings",
@@ -375,6 +375,6 @@ export default [
             title: "account.settings.menuMap.notification",
             show: false
         },
-        component: "NotificationSettings"
+        keyd: "NotificationSettings"
     }
 ];

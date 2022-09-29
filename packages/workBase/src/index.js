@@ -7,4 +7,5 @@ const install = function (Vue) {
     Vue.prototype["$workUtils"] = { ...workUtils };
 };
 
+export { workUtils };
 export default { install };

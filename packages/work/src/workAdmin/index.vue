@@ -7,6 +7,19 @@
 <script>
     import { routes } from "../routes/index.js";
     console.log(111, routes);
+
+    // 根级菜单
+    const rootRouter = {
+        key: "",
+        name: "index",
+        path: "",
+        // component: MenuRouteView,
+        // redirect: "/dashboard",
+        meta: {
+            title: "首页"
+        },
+        children: []
+    };
     const settings = {
         logo: require("../assets/logo.png"),
         title: "Work",
@@ -64,12 +77,17 @@
             };
         },
         created() {
-            this.menus = this.$workUtils.router.createRoutes()[0].children;
-            console.log("this.menuList :>> ", this.menus);
+            this.getMenuList();
         },
         methods: {
             handleMediaQuery() {},
-            handleCollapse() {}
+            handleCollapse() {},
+            getMenuList() {
+                let route = this.$workUtils.router.createRoutes([], rootRouter)[0];
+                this.menus = route.children;
+                // console.log("this.menuList :>> ", route);
+                // this.$router.addRoute("root", route);
+            }
         }
     };
 </script>
