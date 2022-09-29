@@ -55,7 +55,7 @@ export default {
                     i: "30008",
                     elStyle: {},
                     coType: "vue",
-                    coName: "work",
+                    coName: "Work",
                     coProps: {
                         work: work
                     },

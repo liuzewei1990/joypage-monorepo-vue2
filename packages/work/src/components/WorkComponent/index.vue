@@ -1,7 +1,7 @@
 <template>
     <!-- 表示视图组件,用来解析element -->
     <section class="work-component">
-        <grid-item :static="false" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
+        <grid-item :static="true" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
             <component :is="coName" v-bind="coProps"> </component>
         </grid-item>
     </section>
@@ -53,7 +53,6 @@
         opacity: 0.9;
     }
     .vue-grid-item .static {
-        background: #f2f2f2;
     }
     .vue-grid-item .text {
         // font-size: 24px;

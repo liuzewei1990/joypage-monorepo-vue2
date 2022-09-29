@@ -12,12 +12,14 @@
         {
             title: "Name",
             dataIndex: "name",
+            ellipsis: true,
             scopedSlots: { customRender: "name" }
         },
         {
             title: "Cash Assets",
             className: "column-money",
-            dataIndex: "money"
+            dataIndex: "money",
+            ellipsis: true
         },
         {
             title: "Address",

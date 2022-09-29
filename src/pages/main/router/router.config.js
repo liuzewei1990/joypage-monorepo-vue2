@@ -1,32 +1,18 @@
-import { BasicLayout } from "../layouts/index.js";
-
+import { WorkAdmin } from "work";
 /**
  * 基础路由
  */
-export const baseRouterMap = [];
+export const baseRouterMap = [
+    {
+        path: "/",
+        name: "root",
+        props: { menuList: [{ a: 11 }] },
+        component: WorkAdmin,
+        redirect: "/work"
+    }
+];
 
 /**
  * 异步路由
  */
-export const asyncRouterMap = [
-    {
-        path: "/",
-        name: "index",
-        component: BasicLayout,
-        meta: { title: "menu.home" },
-        redirect: "/home",
-        children: [
-            {
-                path: "/home",
-                name: "home",
-                component: () => import(/* webpackChunkName: "home" */ "@main/views/home/"),
-                meta: { title: "menu.dashboard", keepAlive: true }
-            }
-        ]
-    },
-    {
-        path: "*",
-        redirect: "/404",
-        hidden: true
-    }
-];
+export const asyncRouterMap = [];

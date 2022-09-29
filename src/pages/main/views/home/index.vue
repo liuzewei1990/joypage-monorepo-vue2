@@ -1,17 +1,10 @@
 <template>
     <div>
-        <work :work="json"></work>
+        <WorkAdmin></WorkAdmin>
+        <!-- <work :work="json"></work> -->
     </div>
 </template>
 
-<script>
-    import json from "./json";
-    export default {
-        data() {
-            this.json = json;
-            return {};
-        }
-    };
-</script>
+<script></script>
 
 <style lang="scss" scoped></style>

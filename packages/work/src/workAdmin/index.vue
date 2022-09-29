@@ -2,7 +2,7 @@
     <pro-layout
         :logo="logo"
         title="WorkUi"
-        :loading="true"
+        :loading="false"
         layout="top"
         navTheme="dark"
         :menus="[]"
@@ -19,6 +19,9 @@
 <script>
     const logo = require("../assets/logo.png");
     export default {
+        props: {
+            menuList: Array
+        },
         data() {
             return {
                 logo: logo,
@@ -26,13 +29,9 @@
                 // 是否手机模式
                 isMobile: false,
                 settings: {
-                    // 布局类型
-                    layout: "sidemenu", // 'sidemenu', 'topmenu'
-                    // CONTENT_WIDTH_TYPE
+                    layout: "sidemenu",
                     contentWidth: "Fluid",
-                    // 主题 'dark' | 'light'
                     theme: "dark",
-                    // 主色调
                     primaryColor: "#1890ff",
                     fixedHeader: false,
                     fixSiderbar: false,
@@ -42,6 +41,9 @@
                     hideCopyButton: false
                 }
             };
+        },
+        created() {
+            console.log("this.menuList :>> ", this.menuList);
         },
         methods: {
             handleMediaQuery() {},
