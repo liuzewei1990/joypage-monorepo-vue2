@@ -1,6 +1,5 @@
 const path = require("path");
 const createThemeColorReplacerPlugin = require("./config/plugin.config");
-
 function resolve(dir) {
     return path.join(__dirname, dir);
 }
@@ -25,8 +24,12 @@ const isProd = process.env.NODE_ENV === "production";
 const vueConfig = {
     configureWebpack: {
         plugins: []
+        // output: {
+        //     library: `minapp1`,
+        //     libraryTarget: "umd", // 把微应用打包成 umd 库格式
+        //     uniqueName: `webpackJsonp_minapp1`
+        // }
     },
-
     chainWebpack: (config) => {
         config.resolve.alias.set("@$", resolve("src"));
         config.resolve.alias.set("@", resolve("node_modules/vpdsmart/src"));

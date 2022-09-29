@@ -3,26 +3,28 @@
     <section class="work">
         <!-- 可以是多个视图 pages -->
         <!-- {{ views[currViewIndex] }} -->
-        <work-view :workViewItem="views[currViewIndex]"></work-view>
+        <work-view v-if="views.length" :workViewItem="views[currViewIndex]"></work-view>
     </section>
 </template>
 
 <script>
-    export default {
-        props: {
-            work: {
-                type: Object,
-                default() {
-                    return {};
-                }
+    const props = {
+        work: {
+            type: Object,
+            required: true,
+            default() {
+                return {};
             }
-        },
+        }
+    };
+    export default {
+        props,
         computed: {
             currViewIndex() {
                 return this.work.viewIndex;
             },
             views() {
-                return this.work.views;
+                return this.work.views || [];
             }
         }
     };
@@ -31,5 +33,6 @@
 <style lang="less" scoped>
     .work {
         position: relative;
+        // min-width: 800px;
     }
 </style>

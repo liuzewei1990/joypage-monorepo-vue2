@@ -38,7 +38,7 @@ export default {
                     elStyle: {},
                     coType: "vue",
                     coName: "WebComponent",
-                    coProps: { name: "app2", url: "http://127.0.0.1:5500/productionTest/minapp6/index.html" },
+                    coProps: { name: "app2", url: "http://localhost:8000/main/" },
                     coEvent: [],
                     coMethods: [],
                     moved: false

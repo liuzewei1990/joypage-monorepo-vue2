@@ -8,5 +8,7 @@ const routes = {
     meta: { title: "menu.home" }
 };
 export default function initRoutes(router) {
+    if (!router) return;
+
     router.addRoute("root", routes);
 }

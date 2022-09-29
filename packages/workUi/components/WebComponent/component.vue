@@ -1,12 +1,14 @@
 <template>
-    <Qiankun :name="name" :url="url"></Qiankun>
+    <div class="web-component">
+        <micro-app :name="name" :url="url"></micro-app>
+    </div>
 </template>
 
 <script>
-    import Qiankun from "./qiankun";
+    // import Qiankun from "./qiankun";
     export default {
         name: "WebComponent",
-        components: { Qiankun },
+        // components: { Qiankun },
         props: {
             name: {
                 type: String,
@@ -22,3 +24,8 @@
         mounted() {}
     };
 </script>
+
+<style lang="less">
+    .web-component {
+    }
+</style>

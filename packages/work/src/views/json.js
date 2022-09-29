@@ -23,7 +23,7 @@ export default {
                     elStyle: {},
                     coType: "vue",
                     coName: "WebComponent",
-                    coProps: { name: "app1", url: "http://127.0.0.1:5500/productionTest/main/index.html" },
+                    coProps: { name: "purehtml", url: "http://127.0.0.1:5500/productionTest/minapp1/index.html" },
                     coEvent: [],
                     coMethods: [],
                     moved: false
@@ -38,8 +38,8 @@ export default {
                     i: "30005",
                     elStyle: {},
                     coType: "vue",
-                    coName: "WebComponent",
-                    coProps: { name: "app2", url: "http://localhost:8000/main/" },
+                    coName: "WebIframe",
+                    coProps: { name: "app2", url: "http://127.0.0.1:5500/productionTest/minapp6/index.html" },
                     coEvent: [],
                     coMethods: [],
                     moved: false

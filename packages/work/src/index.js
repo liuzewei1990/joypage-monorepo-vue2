@@ -12,8 +12,8 @@ import WorkAdmin from "./workAdmin/index.vue";
 import initRoutes from "./routes/index.js";
 import initStore from "./store/index.js";
 
-// import microApp from "@micro-zoe/micro-app";
-// microApp.start();
+import microApp from "@micro-zoe/micro-app";
+microApp.start();
 
 const install = function (app, options = {}) {
     const { router, store } = options;

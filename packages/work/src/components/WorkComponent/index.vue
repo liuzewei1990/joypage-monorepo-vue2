@@ -48,6 +48,8 @@
         touch-action: none;
         background: #fff;
         box-shadow: 0px 0px 3px rgb(229, 229, 229);
+
+        overflow: hidden;
     }
     .vue-grid-item .resizing {
         opacity: 0.9;
