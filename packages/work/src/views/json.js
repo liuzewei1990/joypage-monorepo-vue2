@@ -39,7 +39,7 @@ export default {
                     elStyle: {},
                     coType: "vue",
                     coName: "WebIframe",
-                    coProps: { name: "app2", url: "http://127.0.0.1:5500/productionTest/minapp6/index.html" },
+                    coProps: { name: "app2", url: "http://127.0.0.1:5500/productionTest/minapp111/index.html" },
                     coEvent: [],
                     coMethods: [],
                     moved: false
@@ -57,7 +57,7 @@ export default {
                     coType: "vue",
                     coName: "Work",
                     coProps: {
-                        work: work
+                        work: {}
                     },
                     coEvent: [],
                     coMethods: [],

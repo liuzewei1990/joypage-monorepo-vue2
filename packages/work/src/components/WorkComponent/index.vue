@@ -2,7 +2,9 @@
     <!-- 表示视图组件,用来解析element -->
     <section class="work-component">
         <grid-item :static="true" :i="workComponentItem.i" :x="workComponentItem.x" :y="workComponentItem.y" :w="workComponentItem.w" :h="workComponentItem.h">
-            <component :is="coName" v-bind="coProps"> </component>
+            <div class="work-component-container" :class="[_coNameClass]">
+                <component :is="coName" v-bind="coProps"> </component>
+            </div>
         </grid-item>
     </section>
 </template>
@@ -11,23 +13,29 @@
     import Vue from "vue";
     import { GridItem } from "vue-grid-layout";
     import { Empty } from "ant-design-vue";
-    export default {
-        components: { GridItem, Empty },
-        props: {
-            workComponentItem: {
-                type: Object,
-                default() {
-                    return {};
-                }
+    export const props = {
+        workComponentItem: {
+            type: Object,
+            default() {
+                return {};
             }
-        },
+        }
+    };
+    export default {
+        props,
+        components: { GridItem, Empty },
         computed: {
+            isComponent() {
+                return Vue.component(this.workComponentItem.coName);
+            },
+            _coNameClass() {
+                return "work-component-container-" + this.coName;
+            },
             elStyle() {
                 return this.workComponentItem.elStyle;
             },
             coName() {
-                let isComponent = Vue.component(this.workComponentItem.coName);
-                return isComponent ? this.workComponentItem.coName : "Empty";
+                return this.isComponent ? this.workComponentItem.coName : "Empty";
             },
             coProps() {
                 return this.workComponentItem.coProps;
@@ -43,14 +51,27 @@
 
     .vue-grid-item:not(.vue-grid-placeholder) {
         // background: #f2f2f2;
-        border: 1px solid rgb(233, 232, 232);
+        // border: 1px solid rgb(233, 232, 232);
         border-radius: 5px;
         touch-action: none;
         background: #fff;
         box-shadow: 0px 0px 3px rgb(229, 229, 229);
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
     }
+
+    .work-component-container {
+        flex: 1;
+    }
+
+    .work-component-container-WebIframe {
+        width: 100%;
+        height: 100%;
+        // overflow: hidden;
+    }
+
     .vue-grid-item .resizing {
         opacity: 0.9;
     }

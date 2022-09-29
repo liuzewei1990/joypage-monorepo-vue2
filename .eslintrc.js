@@ -44,6 +44,7 @@ module.exports = {
         "no-undef": 0, //不允许未声明的变量
         "no-unused-vars": 0,
         "no-useless-escape": 0,
-        "no-prototype-builtins": 0
+        "no-prototype-builtins": 0,
+        "no-useless-catch": 0
     }
 };

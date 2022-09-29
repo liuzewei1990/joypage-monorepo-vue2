@@ -33,6 +33,9 @@
 <style lang="less" scoped>
     .work {
         position: relative;
-        // min-width: 800px;
+        // 这里width会影响iframe和web component 出现滚动条，原则上所有组件和页面的尺寸都应该是100%
+        min-width: 800px;
+        padding: 2px 2px;
+        box-sizing: border-box;
     }
 </style>

@@ -76,6 +76,7 @@
                 this.initIframe();
             }, 200),
             initIframe() {
+                console.log("12333 :>> ", this.$el);
                 this.iframeEl = document.createElement("iframe");
                 this.iframeEl.setAttribute("style", "visibility: hidden; position: absolute; top: -99999px; border: none;");
                 this.iframeEl.setAttribute("id", this.frameId);
@@ -114,13 +115,13 @@
                 );
             }
         },
-        created() {
+        mounted() {
             this.listenForEvents();
             this.initIframe();
         },
         watch: {
             src: {
-                immediate: true,
+                // immediate: true,
                 handler() {
                     this.reinitIframe();
                 }

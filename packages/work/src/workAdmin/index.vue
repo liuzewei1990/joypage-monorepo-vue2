@@ -1,10 +1,12 @@
 <template>
-    <pro-layout v-bind="settings">
+    <pro-layout v-bind="settings" :menus="menus">
         <router-view />
     </pro-layout>
 </template>
 
 <script>
+    import { routes } from "../routes/index.js";
+    console.log(111, routes);
     const settings = {
         logo: require("../assets/logo.png"),
         title: "Work",
@@ -17,7 +19,6 @@
         // menu宽度
         siderWidth: 180,
         // 菜单数据
-        menus: [],
         // 控制菜单的折叠和展开
         collapsed: false,
         // 是否移动端
@@ -52,17 +53,19 @@
         // hideHintAlert: false,
         // hideCopyButton: false
     };
-
     export default {
         props: {
             menuList: Array
         },
         data() {
             this.settings = settings;
-            return {};
+            return {
+                menus: []
+            };
         },
         created() {
-            console.log("this.menuList :>> ", this.menuList);
+            this.menus = this.$workUtils.router.createRoutes()[0].children;
+            console.log("this.menuList :>> ", this.menus);
         },
         methods: {
             handleMediaQuery() {},
@@ -73,6 +76,6 @@
 
 <style lang="less">
     .ant-pro-basicLayout-content {
-        margin: 5px !important;
+        margin: 0px !important;
     }
 </style>
