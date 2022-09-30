@@ -8,6 +8,8 @@ import vpdsmart from "vpdsmart";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
+import "./router/routerController.js";
+
 Vue.use(work, { router, store });
 Vue.use(vpdsmart);
 Vue.use(Antd);

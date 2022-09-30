@@ -1,13 +1,20 @@
-import menu from "../mock/mune.js";
-
-const aaa = {
-    name: "MenuRouteViewLayout",
+const pageView = {
+    name: "pageView",
     render: (h) => h("div", null, "你好")
 };
 
-export const createRoutes = (data, rootRouter = {}) => {
+const RouteView = {
+    name: "routerView",
+    render: (h) => h("router-view")
+};
+
+const constantRouterComponents = {
+    RouteView
+};
+
+export const createRoutes = (apiMenu, rootRouter = {}) => {
     let routers = [];
-    const result = menu;
+    const result = apiMenu;
     const menuNav = [];
     const childrenNav = [];
     //      后端数据, 根级树数组,  根级 PID
@@ -30,13 +37,13 @@ export const generator = (routerMap, parent) => {
         const { title, show, hideChildren, hiddenHeaderContent, target, icon } = item.meta || {};
         const currentRouter = {
             // 如果路由设置了 path，则作为默认 path，否则 路由地址 动态拼接生成如 /dashboard/workplace
-            path: item.path || `${(parent && parent.path) || ""}/${item.key}`,
+            path: item.path || `${(parent && parent.path) || ""}/${item.name}`,
             // 路由名称，建议唯一
             name: item.name || item.key || "",
             // 该路由对应页面的 组件 :方案1
-            // component: constantRouterComponents[item.component || item.key],
+            component: item.component || constantRouterComponents[item.key] || pageView,
             // 该路由对应页面的 组件 :方案2 (动态加载)
-            component: aaa,
+            // component: pageView,
 
             props: item.props || {},
 
@@ -97,4 +104,43 @@ export const listToTree = (list, tree, parentId) => {
             tree.push(child);
         }
     });
+};
+
+export const jsonToTree = (data, config) => {
+    let id = config.id || "id",
+        pid = config.pid || "pid",
+        children = config.children || "children",
+        idMap = [],
+        jsonTree = [];
+    data.forEach(function (v) {
+        idMap[v[id]] = v;
+    });
+    data.forEach(function (v) {
+        let parent = idMap[v[pid]];
+        if (parent) {
+            !parent[children] && (parent[children] = []);
+            parent[children].push(v);
+        } else {
+            jsonTree.push(v);
+        }
+    });
+    return jsonTree;
+};
+
+export const treeToJson = (data, config = {}, callback = () => {}) => {
+    let id = config.id || "id",
+        pid = config.pid || "pid",
+        children = config.children || "children",
+        json = [];
+    json = data.reduce((arr, cur) => {
+        let item = Object.assign({}, cur);
+        if (children in cur) {
+            delete item[children];
+            delete item["component"];
+            return arr.concat([item], treeToJson(cur[children], config));
+        } else {
+            return arr.concat([item]);
+        }
+    }, []);
+    return json;
 };

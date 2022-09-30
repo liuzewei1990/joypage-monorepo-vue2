@@ -8,7 +8,7 @@ export const baseRouterMap = [
         name: "root",
         props: { menuList: [{ a: 11 }] },
         component: WorkAdmin
-        // redirect: "/work"
+        // redirect: "/result"
     }
 ];
 

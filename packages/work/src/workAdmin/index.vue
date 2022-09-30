@@ -30,7 +30,7 @@
         // 导航主题色 'light' | 'dark'
         theme: "light",
         // menu宽度
-        siderWidth: 180,
+        siderWidth: 200,
         // 菜单数据
         // 控制菜单的折叠和展开
         collapsed: false,
@@ -48,7 +48,7 @@
         // 自定义右侧内容区 (props: HeaderViewProps) => VNode
         rightContentRender: () => {},
         // 自定义collapsed图标 (collapsed: boolean) => VNode
-        collapsedButtonRender: () => {},
+        // collapsedButtonRender: () => {},
         // 自定义footer区 (props: BasicLayoutProps) => VNode
         footerRender: () => {},
         // 自定义面包屑呈现方法 ({ route, params, routes, paths, h }) => VNode[]
@@ -57,7 +57,7 @@
         openOnceKey: true,
         // primaryColor: "#1890ff",
         // 固定header
-        fixedHeader: true,
+        fixedHeader: false,
         // 固定menu
         fixSiderbar: true
 
@@ -83,10 +83,7 @@
             handleMediaQuery() {},
             handleCollapse() {},
             getMenuList() {
-                let route = this.$workUtils.router.createRoutes([], rootRouter)[0];
-                this.menus = route.children;
-                // console.log("this.menuList :>> ", route);
-                // this.$router.addRoute("root", route);
+                this.menus = this.$store.getters.asyncRoutes;
             }
         }
     };

@@ -1,21 +1,32 @@
 
-项目前端架构:monorepo架构（components、parse、sdk） + 微项目(底座、编辑器、其他)
-npm包：parse解析器、sdk、组件库
-项目:编辑器、底座 这两个项目依赖以上 (parse解析器 -> 组件库) 和 (sdk外链)
+项目前端架构:monorepo架构（work、workUi、workBase） + 微项目(项目一、项目二、其他项目)
 
-组件库：
+
+
+work包:
+【Work解析系列组件】 用来解析json schema配置渲染组件信息到一个完整的页面，底座使用、编辑器预览使用
+
+【WorkAdmin】功能点：
+【创建admin布局】
+【支持tabs页签】
+【支持menu布局可配】可选
+【支持可配navbar显示隐藏】
+【支持menuList菜单权限获取渲染menu组件】
+【支持keep-alive的动态路由缓存：addRoutes、matcher】 尝试实现：push重建页面，back缓存页面
+【支持组件库预加载】
+【通过解析器来解析JSON Schema配置，渲染页面布局和Components】 依赖parse解析器的包。 Components分类：1.【vue组件】 2.【web components】 3.【微前端】
+【支持数据通讯：event bus】
+【支持多tab view渲染】
+
+
+workUi组件库：
 【开发环境】 搭建stortybook环境开发组件库
 【基础组件】 基于arco design 二次封装 支持单独暴露接口引入
 【常用业务组件】 基于sdk和基础组件的业务封装
 【外部组件集成】 调用后台接口获取json配置信息
 【支持独立打包、异步加载组件】
 
-
-parse解析器包:
-【Work组件】 用来解析json schema配置渲染组件信息到一个完整的页面，底座使用、编辑器预览使用
-
-
-sdk包的功能点：
+workBase基础库：
 【axios封装】
 【websoket封装】
 【数据库表的实体对象】 基于 axios
@@ -33,17 +44,7 @@ sdk包的功能点：
 【preview预览】 依赖parse解析器的包
 
 
-底座项目功能点: 依赖：sdk、parse解析器
-【支持夜间模式、国际化】可选
-【支持tabs页签】
-【支持menu布局可配】可选
-【支持可配navbar显示隐藏】
-【支持menuList菜单权限获取渲染menu组件】
-【支持keep-alive的动态路由缓存：addRoutes、matcher】 尝试实现：push重建页面，back缓存页面
-【支持组件库预加载】
-【通过解析器来解析JSON Schema配置，渲染页面布局和Components】 依赖parse解析器的包。 Components分类：1.【vue组件】 2.【web components】 3.【微前端】
-【支持数据通讯：event bus】
-【支持多tab view渲染】
+
 
 
 

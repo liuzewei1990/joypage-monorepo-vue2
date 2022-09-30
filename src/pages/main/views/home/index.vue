@@ -1,6 +1,8 @@
 <template>
     <div>
-        <WorkAdmin></WorkAdmin>
+        <WorkAdmin v-bind="{}">
+            <!-- <Menus slot="menu"></Menus> -->
+        </WorkAdmin>
         <!-- <work :work="json"></work> -->
     </div>
 </template>
