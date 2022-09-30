@@ -5,26 +5,11 @@
 </template>
 
 <script>
-    import { routes } from "../routes/index.js";
-    console.log(111, routes);
-
-    // 根级菜单
-    const rootRouter = {
-        key: "",
-        name: "index",
-        path: "",
-        // component: MenuRouteView,
-        // redirect: "/dashboard",
-        meta: {
-            title: "首页"
-        },
-        children: []
-    };
     const settings = {
         logo: require("../assets/logo.png"),
         title: "Work",
         // 坐侧边布局 或 上下顶栏布局 sidemenu | topmenu
-        layout: "sidemenu",
+        layout: "topmenu",
         // 局的内容模式，流体：自适应，固定：固定宽度1200px 'Fixed' | 'Fluid'布
         contentWidth: "Fluid",
         // 导航主题色 'light' | 'dark'
@@ -83,7 +68,7 @@
             handleMediaQuery() {},
             handleCollapse() {},
             getMenuList() {
-                this.menus = this.$store.getters.asyncRoutes;
+                // this.menus = this.$store.getters.asyncRoutes;
             }
         }
     };
