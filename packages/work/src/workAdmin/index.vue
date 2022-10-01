@@ -1,15 +1,18 @@
 <template>
-    <pro-layout v-bind="settings" :menus="menus">
+    <AdminLayout v-bind="settings" :menus="menus">
         <router-view />
-    </pro-layout>
+    </AdminLayout>
 </template>
 
 <script>
+    import AdminLayout from "../layout/index.js";
     const settings = {
-        logo: require("../assets/logo.png"),
-        title: "Work",
         // 坐侧边布局 或 上下顶栏布局 sidemenu | topmenu
         layout: "topmenu",
+        // 系统标题
+        title: "Work",
+        // 系统logo
+        logo: require("../assets/logo.png"),
         // 局的内容模式，流体：自适应，固定：固定宽度1200px 'Fixed' | 'Fluid'布
         contentWidth: "Fluid",
         // 导航主题色 'light' | 'dark'
@@ -27,7 +30,7 @@
         // menuHeaderRender: "",
 
         // 是否显示header
-        visible: true,
+        visibleHeader: true,
         // 自定义header方法 (props: BasicLayoutProps) => VNode
         headerRender: () => {},
         // 自定义右侧内容区 (props: HeaderViewProps) => VNode
@@ -52,6 +55,7 @@
         // hideCopyButton: false
     };
     export default {
+        components: { AdminLayout },
         props: {
             menuList: Array
         },
