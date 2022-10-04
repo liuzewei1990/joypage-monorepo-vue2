@@ -26,7 +26,7 @@
         components: { GridItem, Empty },
         computed: {
             isComponent() {
-                return Vue.component(this.workComponentItem.coName);
+                return Vue.component(this.workComponentItem.coName) || ["router-view"].indexOf(this.workComponentItem.coName) !== -1;
             },
             _coNameClass() {
                 return "work-component-container-" + this.coName;

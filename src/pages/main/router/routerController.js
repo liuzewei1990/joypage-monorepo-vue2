@@ -9,13 +9,14 @@ const loginRoutePath = "/user/login";
 const defaultRoutePath = "/dashboard/workplace";
 
 router.beforeEach((to, from, next) => {
+    console.log("全局钩子---routerController");
     const isLogin = true;
     if (isLogin) {
         // 1、如果重复访问登录路由 重定向到首页去，2、检查是否被注册过动态路由
         if (to.name === "login") {
             next({ path: defaultRoutePath });
         } else {
-            hasRoute(to) ? next() : registerRoutes(to, from, next);
+            next();
         }
     } else {
         // 在免登录名单，直接进入,否则去登录

@@ -1,5 +1,5 @@
 <script>
-    import BaseMenu from "./base.vue";
+    import BaseMenu from "../BaseMenu/index.vue";
     import Logo from "../LayoutHeader/logo.vue";
     import { mapState } from "vuex";
     export const computeds = mapState({
@@ -8,13 +8,12 @@
         collapsed: (state) => state.layoutConfig.collapsed,
         theme: (state) => state.layoutConfig.theme,
         siderWidth: (state) => state.layoutConfig.siderWidth,
-        classNames: (state) => ({
-            ["fix-sider"]: state.layoutConfig.fixSiderbar
+        classNames: ({ layoutConfig } = state) => ({
+            ["fix-sider"]: layoutConfig.fixSiderbar
         })
     });
     export default {
         inheritAttrs: false,
-        name: "LayoutSiderMenu",
         components: { BaseMenu, Logo },
         computed: { ...computeds }
     };
@@ -22,6 +21,6 @@
 <template>
     <a-layout-sider :class="classNames" :theme="theme" :width="siderWidth" :collapsedWidth="80" v-model="collapsed" collapsible :trigger="null">
         <Logo v-bind="{ logo, title, collapsed }" />
-        <BaseMenu></BaseMenu>
+        <BaseMenu />
     </a-layout-sider>
 </template>

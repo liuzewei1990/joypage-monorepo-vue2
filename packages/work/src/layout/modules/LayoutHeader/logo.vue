@@ -2,7 +2,6 @@
     export default {
         functional: true,
         render(h, ctx) {
-            console.log(ctx, 111);
             const { logo, title, collapsed, color } = ctx.props;
             return (
                 //class = ant-pro-sider-menu-logo

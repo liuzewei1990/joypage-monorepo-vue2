@@ -1,7 +1,9 @@
 export default {
     state: {
         // 坐侧边布局 或 上下顶栏布局 sidemenu | topmenu
-        layout: "sidemenu",
+        layout: "topmenu",
+        // 是否显示header
+        visibleHeader: true,
         // 固定header
         fixedHeader: true,
         // 固定menu
@@ -23,14 +25,20 @@ export default {
         // 菜单数据
         // 控制菜单的折叠和展开
         collapsed: false,
-        // 菜单折叠折叠事件
-        handleCollapse: () => {},
-        // 是否显示header
-        visibleHeader: true
+        menu: {},
+        plugins: [
+            {
+                name: "BaseMenu"
+            }
+        ]
     },
     mutations: {
         ["CHANGE_COLLAPSED"](state, boolean) {
             state.collapsed = !state.collapsed;
+        },
+
+        ["INIT_CONFIG"](state, { key, value }) {
+            state[key] = value;
         }
     },
     actions: {}

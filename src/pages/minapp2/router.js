@@ -1,6 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
-import { WorkAdmin } from "work";
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location, onResolve, onReject) {
+    console.log(111, location, this);
+    if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject);
+    return originalPush.call(this, location).catch((err) => err);
+};
+
 Vue.use(Router);
 
 const createRouter = () =>
@@ -9,9 +15,12 @@ const createRouter = () =>
             {
                 path: "/",
                 name: "root",
-                props: { menuList: [{ a: 11 }] },
-                component: WorkAdmin,
                 redirect: "/work"
+            },
+            {
+                path: "/login",
+                component: () => import("./login.vue"),
+                name: "login"
             }
         ]
     });

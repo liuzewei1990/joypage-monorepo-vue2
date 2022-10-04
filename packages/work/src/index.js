@@ -1,4 +1,4 @@
-import WorkBase from "work-base";
+import * as WorkBase from "work-base";
 import WorkUi from "work-ui";
 import ProLayout from "@ant-design-vue/pro-layout";
 
@@ -16,7 +16,7 @@ import microApp from "@micro-zoe/micro-app";
 microApp.start();
 
 const install = function (app, options = {}) {
-    const { router, store } = options;
+    const { router, store, menuApi } = options;
 
     // 注册基础组件库
     app.use(WorkBase);
@@ -37,5 +37,5 @@ const install = function (app, options = {}) {
     initStore(store);
 };
 
-export { WorkAdmin };
+export { WorkAdmin, WorkBase };
 export default { install };

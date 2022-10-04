@@ -1,6 +1,7 @@
 <script>
     import BaseContent from "./base.vue";
     import { mapState } from "vuex";
+
     export const computeds = mapState({
         classNames: ({ layoutConfig } = state) => ({
             ["fix-header-content-top"]: layoutConfig.visibleHeader && layoutConfig.fixedHeader
@@ -9,7 +10,6 @@
     });
     export default {
         name: "LayoutContent",
-        inheritAttrs: false,
         components: { BaseContent },
         computed: { ...computeds }
     };
@@ -20,5 +20,3 @@
         <BaseContent><slot></slot></BaseContent>
     </a-layout-content>
 </template>
-
-<style lang="less" scoped></style>
