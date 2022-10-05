@@ -1,6 +1,5 @@
 import * as WorkBase from "work-base";
 import WorkUi from "work-ui";
-import ProLayout from "@ant-design-vue/pro-layout";
 
 import Work from "./components/Work/index.vue";
 import WorkView from "./components/WorkView/index.vue";
@@ -21,7 +20,6 @@ const install = function (app, options = {}) {
     // 注册基础组件库
     app.use(WorkBase);
     app.use(WorkUi);
-    app.use(ProLayout);
 
     // 注册Work系列解析组件
     app.component("Work", Work);

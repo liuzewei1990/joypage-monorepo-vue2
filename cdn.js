@@ -1,11 +1,10 @@
 module.exports = {
     externals: {
         vue: "Vue",
-        // pinia: "Pinia",
+        vuex: "Vuex",
         "vue-router": "VueRouter",
         axios: "axios",
-        "@arco-design/web-vue": "ArcoVue",
-        "@arco-design/web-vue/es/icon": "ArcoVueIcon"
+        "ant-design-vue": "antd"
     },
     js: [],
     css: []
