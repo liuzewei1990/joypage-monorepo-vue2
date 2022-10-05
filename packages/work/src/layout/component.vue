@@ -3,6 +3,7 @@
     import LayoutSiderMenu from "./modules/LayoutSiderMenu/index.vue";
     import LayoutHeader from "./modules/LayoutHeader/index.vue";
     import LayoutContent from "./modules/LayoutContent/index.vue";
+    import LayoutFooter from "./modules/LayoutFooter/index.vue";
     import { mapState } from "vuex";
 
     export const computeds = mapState({
@@ -19,7 +20,7 @@
     export default {
         inheritAttrs: false,
         // props: adminBaseLayoutProps,
-        components: { LayoutSiderMenu, LayoutHeader, LayoutContent },
+        components: { LayoutSiderMenu, LayoutHeader, LayoutContent, LayoutFooter },
         computed: { ...computeds },
         data() {
             return {};
@@ -39,7 +40,7 @@
                 <slot></slot>
                 <component v-for="(plugin, index) in plugins" :key="index" :is="plugin.name"></component>
             </LayoutContent>
-            <a-layout-footer style="text-align: center"> Ant Design ©2018 Created by Ant UED </a-layout-footer>
+            <LayoutFooter></LayoutFooter>
         </a-layout>
     </a-layout>
 </template>

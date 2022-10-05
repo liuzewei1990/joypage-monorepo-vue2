@@ -14,5 +14,5 @@
 </script>
 
 <template>
-    <component v-bind="{ theme }" :is="menuComponentName"></component>
+    <component v-bind="{ ...$attrs, theme }" :is="menuComponentName"></component>
 </template>

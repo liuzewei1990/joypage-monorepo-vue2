@@ -7,15 +7,13 @@ import work from "work";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
-import "./router/routerController.js";
-
 Vue.use(work, { router, store });
 Vue.use(Antd);
 
 Vue.config.productionTip = false;
 
 new Vue({
-    router,
     store,
+    router,
     render: (h) => h(App)
 }).$mount("#app");

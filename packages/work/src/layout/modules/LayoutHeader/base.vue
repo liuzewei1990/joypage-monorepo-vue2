@@ -12,6 +12,7 @@
         layout: (state) => state.layoutConfig.layout,
         isTop: (state) => state.layoutConfig.layout === "topmenu",
         menuComponentName: (state) => state.layoutConfig.menu.coName || "",
+        visibleSider: (state) => state.layoutConfig.visibleSider,
         classNames: (state) => ({
             ["fixed-wide"]: state.layoutConfig.layout === "topmenu" && state.layoutConfig.contentWidth === "Fixed" ? true : false
         })
@@ -32,7 +33,7 @@
                 <a-icon class="trigger" v-if="!isTop" @click="$store.commit('CHANGE_COLLAPSED')" :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
             </a-col>
             <a-col :flex="1">
-                <component v-if="isTop" v-bind="{ logo, title, collapsed, theme, mode: 'horizontal' }" :is="menuComponentName"></component>
+                <BaseMenu v-if="isTop && visibleSider" v-bind="{ mode: 'horizontal' }"></BaseMenu>
             </a-col>
             <a-col flex="300px"> </a-col>
         </a-row>

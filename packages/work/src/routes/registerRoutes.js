@@ -1,14 +1,16 @@
 import MenuRouteView from "../views/index.vue";
 import WorkAdmin from "../workAdmin/index.vue";
 
+const reg = /^\/\d+\/work\//;
+
 // 根级菜单
 export const workRouter = {
     name: "work",
-    path: "/work",
+    path: "/:workId/work",
     beforeEnter(to, from, next) {
         next();
     },
-    props: (route) => ({ workId: route.query.workId }),
+    props: (route) => ({ workId: route.params.workId }),
     component: WorkAdmin
     // redirect: "/work/2"
 };
@@ -27,7 +29,7 @@ export const errorRouter = {
  */
 export function hasRoute(to) {
     let router = this;
-    let find = router.getRoutes().find((item) => to.path === "/" || to.path === item.path);
+    let find = router.getRoutes().find((item) => to.path === "/" || to.name === item.name);
     return !!find;
 }
 
@@ -39,8 +41,9 @@ export function hasRoute(to) {
  */
 export function registerRoutes(to, from, next) {
     console.log("执行注册路由逻辑");
+
     let router = this;
-    if (to.path !== "/work/" && to.path.indexOf("/work/") === 0) {
+    if (reg.test(to.path)) {
         const route = createRoute(to);
         router.addRoute("work", route);
         next({ ...to, replace: true });
@@ -50,9 +53,9 @@ export function registerRoutes(to, from, next) {
 }
 
 export function createRoute(to = {}) {
-    const id = to.path.replace("/work/", "");
+    const id = to.path.replace(reg, "");
     return {
-        path: to.path,
+        path: id,
         name: id,
         meta: { id: id },
         component: getViewComponent()

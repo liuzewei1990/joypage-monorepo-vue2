@@ -1,8 +1,9 @@
 <template>
-    <div id="app">
-        <router-view />
-        <!-- <ToopRenderData id="795656079581999104" :pageType="2"></ToopRenderData> -->
-    </div>
+    <router-view></router-view>
 </template>
 
-<style lang="less" scoped></style>
+<script>
+    export default {};
+</script>
+
+<style lang="scss" scoped></style>

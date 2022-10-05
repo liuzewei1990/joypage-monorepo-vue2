@@ -6,7 +6,8 @@
         visibleHeader: (state) => state.layoutConfig.visibleHeader,
         siderWidth: (state) => state.layoutConfig.siderWidth,
         classNames: (state) => ({
-            ["fix-header"]: state.layoutConfig.fixedHeader
+            ["fix-header"]: state.layoutConfig.fixedHeader,
+            ["header-treme-" + state.layoutConfig.theme]: state.layoutConfig.layout === "topmenu"
         }),
         styles: ({ layoutConfig } = state) => ({
             ["padding"]: 0,
@@ -24,7 +25,7 @@
 </script>
 
 <template>
-    <a-layout-header :class="classNames" :style="styles" v-if="visibleHeader">
+    <a-layout-header class="work-header" :class="classNames" theme="dark" :style="styles" v-if="visibleHeader">
         <BaseHeader></BaseHeader>
     </a-layout-header>
 </template>

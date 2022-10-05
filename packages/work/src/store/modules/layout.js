@@ -4,6 +4,8 @@ export default {
         layout: "topmenu",
         // 是否显示header
         visibleHeader: true,
+        // 是否显示sider
+        visibleSider: true,
         // 固定header
         fixedHeader: true,
         // 固定menu
@@ -37,7 +39,7 @@ export default {
             state.collapsed = !state.collapsed;
         },
 
-        ["INIT_CONFIG"](state, { key, value }) {
+        ["SET_STATE"](state, { key, value }) {
             state[key] = value;
         }
     },

@@ -1,8 +1,8 @@
 <template>
     <AdminLayout v-if="loading">
-        <keep-alive>
-            <router-view />
-        </keep-alive>
+        <!-- <keep-alive> -->
+        <router-view />
+        <!-- </keep-alive> -->
     </AdminLayout>
 </template>
 
@@ -13,12 +13,14 @@
         layout: "sidemenu",
         // 是否显示header
         visibleHeader: true,
+        // 是否显示sider
+        visibleSider: true,
         // 固定header
         fixedHeader: true,
         // 固定menu
         fixSiderbar: true,
         // 局的内容模式，流体：自适应，固定：固定宽度1200px 'Fixed' | 'Fluid'布
-        contentWidth: "Fixed",
+        contentWidth: "Fluid",
 
         // 系统标题
         title: "Work",
@@ -60,11 +62,11 @@
         },
         methods: {
             async getMenuList() {
-                // console.log("workId:", this.workId, mutations);
+                console.log("workId:", this.workId);
                 const stateKeys = Object.keys({ ...this.$store.state.layoutConfig });
                 let projectConfig = await this.api(this.workId);
                 for (const stateKey of stateKeys) {
-                    this.$store.commit("INIT_CONFIG", { key: stateKey, value: projectConfig[stateKey] });
+                    this.$store.commit("SET_STATE", { key: stateKey, value: projectConfig[stateKey] });
                 }
                 this.loading = true;
             },
@@ -72,7 +74,7 @@
                 return new Promise(function (resolve, reject) {
                     setTimeout(() => {
                         resolve(settings);
-                    }, 100);
+                    }, 3000);
                 });
             }
         }
