@@ -3,28 +3,58 @@
     <section class="work">
         <!-- 可以是多个视图 pages -->
         <!-- {{ views[currViewIndex] }} -->
-        <work-view v-if="views.length" :workViewItem="views[currViewIndex]"></work-view>
+        <!-- <a-button-group>
+            <a-button type="primary" @click="currViewIndex = 0"> L </a-button>
+            <a-button type="dashed" @click="currViewIndex = 1"> R </a-button>
+        </a-button-group> -->
+        <component :is="workData.viewController"></component>
+        <keep-alive>
+            <work-view v-for="(item, index) in views" :key="item.viewId || index" :workViewItem="item" v-if="currViewIndex === index"></work-view>
+        </keep-alive>
     </section>
 </template>
 
 <script>
-    const props = {
-        work: {
-            type: Object,
-            required: true,
-            default() {
-                return {};
-            }
-        }
-    };
+    const props = {};
     export default {
-        props,
+        props: {
+            work: {
+                type: Object,
+                required: true,
+                default() {
+                    return {};
+                }
+            }
+        },
+        watch: {
+            work: {
+                immediate: true,
+                handler(newData) {
+                    this.workData = newData;
+                }
+            }
+        },
         computed: {
-            currViewIndex() {
-                return this.work.viewIndex;
+            currViewIndex: {
+                get() {
+                    return this.workData.viewIndex;
+                },
+                set(val) {
+                    this.workData.viewIndex = val;
+                }
             },
             views() {
-                return this.work.views || [];
+                return this.workData.views || [];
+            }
+        },
+        data() {
+            return {
+                workData: {}
+            };
+        },
+        methods: {
+            setCurrViewIndex(index) {
+                this.currViewIndex = index || 0;
             }
         }
     };

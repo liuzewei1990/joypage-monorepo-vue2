@@ -14,6 +14,12 @@
 
 <script>
     export default {
-        name: "Card"
+        name: "Card",
+        created() {
+            console.log("card:created");
+        },
+        activated() {
+            console.log("card:activated");
+        }
     };
 </script>

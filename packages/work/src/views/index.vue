@@ -11,25 +11,6 @@
         data() {
             return {
                 loading: false,
-                workViewItem: {
-                    elements: [
-                        {
-                            elId: "30008",
-                            x: 0,
-                            y: 160,
-                            w: 30,
-                            h: 166,
-                            i: "30008",
-                            elStyle: {},
-                            coType: "vue",
-                            coName: "Work",
-                            coProps: { work: json },
-                            coEvent: [],
-                            coMethods: [],
-                            moved: false
-                        }
-                    ]
-                },
                 json: []
             };
         },

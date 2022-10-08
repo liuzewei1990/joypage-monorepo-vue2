@@ -79,6 +79,9 @@
                 data,
                 columns
             };
+        },
+        created() {
+            console.log("创建table");
         }
     };
 </script>

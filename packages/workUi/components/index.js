@@ -5,3 +5,4 @@ export { default as Calendar } from "./Calendar";
 export { default as Card } from "./Card";
 export { default as Menu } from "./Menu";
 export { default as FixedMenu } from "./FixedMenu";
+export { default as ViewController } from "./ViewController";

@@ -18,9 +18,17 @@
                 }
             }
         },
+        watch: {
+            workViewItem: {
+                immediate: true,
+                handler() {
+                    this.workComponents = JSON.parse(JSON.stringify(this.workViewItem.elements));
+                }
+            }
+        },
         data() {
             return {
-                workComponents: JSON.parse(JSON.stringify(this.workViewItem.elements))
+                workComponents: []
             };
         },
         computed: {
@@ -28,7 +36,9 @@
                 return this.workViewItem;
             }
         },
-        created() {}
+        created() {
+            console.log("created:workview");
+        }
     };
 </script>
 

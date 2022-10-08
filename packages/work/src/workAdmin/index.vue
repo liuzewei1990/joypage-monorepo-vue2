@@ -10,7 +10,7 @@
     import AdminLayout from "../layout/index.js";
     const settings = {
         // 坐侧边布局 或 上下顶栏布局 sidemenu | topmenu
-        layout: "topmenu",
+        layout: "sidemenu",
         // 是否显示header
         visibleHeader: true,
         // 是否显示sider
@@ -42,9 +42,9 @@
         },
 
         plugins: [
-            {
-                name: "FixedMenu"
-            }
+            // {
+            //     name: "FixedMenu"
+            // }
         ]
     };
     export default {
